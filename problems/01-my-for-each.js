@@ -21,18 +21,31 @@ myForEach(['laika', 'belka'], function (el) {
 console.log(test); // ['LAIKA', 'BELKA']
 *******************************************************************************/
 
-function myForEach(array, cb) {
+function myForEach(array, update) {
 
-    for (let el of array) {
+    for (let i = 0; i < array.length; i++) {
+        let el = array[i]
+        update(el, i, array)
+        console.log(el + ' is at the index' + i);
 
-        let elements = cb(el, i, arr);
-        return elements;
+
     }
+
+    //     let printIndex = function (arr, i) {
+
+    //         for (let el of arr) {
+    //             console.log(el)
+    //         }
+
+    //     }
 }
 
-let print = function (word) {
-    print.indexOf(word)
-}
+let test = [];
+myForEach(['laika', 'belka'], function (el, i) {
+    test.push(el.toUpperCase());
+    console.log(i);
+});
+console.log(test); // ['LAIKA', 'BELKA']
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
