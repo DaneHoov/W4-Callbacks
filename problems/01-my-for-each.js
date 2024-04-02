@@ -22,12 +22,21 @@ console.log(test); // ['LAIKA', 'BELKA']
 *******************************************************************************/
 
 function myForEach(array, cb) {
-    // Your code here 
+
+    for (let el of array) {
+
+        let elements = cb(el, i, arr);
+        return elements;
+    }
+}
+
+let print = function (word) {
+    print.indexOf(word)
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
     module.exports = myForEach;
-} catch(e) {
+} catch (e) {
     return null;
 }
