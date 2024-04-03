@@ -24,11 +24,10 @@ console.log(arr2); // [ 0, 9, 20 ]
 function mapMutator(array, cb) {
 
   for (let i = 0; i < array.length; i++) {
-    let el = array[i];
+    // array[i];
     // console.log(el);
-    el = cb(el, i);
+    array[i] = cb(array[i], i);
   }
-  return array;
 }
 
 let arr1 = [4, 2, 6, 5];
